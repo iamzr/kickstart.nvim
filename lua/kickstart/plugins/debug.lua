@@ -23,6 +23,7 @@ return {
 
     -- Add your own debuggers here
     'leoluz/nvim-dap-go',
+    'mfussenegger/nvim-dap-python',
   },
   keys = {
     -- Basic debugging keymaps, feel free to change to your liking!
@@ -144,5 +145,20 @@ return {
         detached = vim.fn.has 'win32' == 0,
       },
     }
+
+    -- Install Python specific config
+    require('dap-python').setup 'python3'
+
+    -- dap.configurations.python = {
+    --   {
+    --     type = 'python',
+    --     request = 'launch',
+    --     name = 'Launch file',
+    --     program = '${file}',
+    --     pythonPath = function()
+    --       return '/usr/bin/python'
+    --     end,
+    --   },
+    -- }
   end,
 }
